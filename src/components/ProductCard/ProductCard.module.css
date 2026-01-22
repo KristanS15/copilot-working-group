@@ -78,3 +78,9 @@
   color: #ed8936;
   font-weight: 600;
 }
+
+.actionsRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
