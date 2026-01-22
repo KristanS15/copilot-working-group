@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ProductDetail } from './index';
 import { CartProvider } from '../../contexts/CartContext';
 import type { Product } from '../../types/product';
+import type { UseQueryResult } from '@tanstack/react-query';
 
 // Mock the hooks and components that depend on Router
 vi.mock('../../hooks/useProduct', () => ({
@@ -69,7 +70,7 @@ describe('ProductDetail Component - Behavior-Driven Tests', () => {
       data: mockProduct,
       isLoading: false,
       isError: false,
-    } as any);
+    } as UseQueryResult<Product, Error>);
 
     // Act: Render the component
     renderWithProviders(<ProductDetail />);
@@ -98,7 +99,7 @@ describe('ProductDetail Component - Behavior-Driven Tests', () => {
       data: mockProduct,
       isLoading: false,
       isError: false,
-    } as any);
+    } as UseQueryResult<Product, Error>);
 
     const user = userEvent.setup();
 
@@ -123,7 +124,7 @@ describe('ProductDetail Component - Behavior-Driven Tests', () => {
       data: mockProduct,
       isLoading: false,
       isError: false,
-    } as any);
+    } as UseQueryResult<Product, Error>);
 
     // Act: Render the component
     renderWithProviders(<ProductDetail />);
@@ -154,7 +155,7 @@ describe('ProductDetail Component - Behavior-Driven Tests', () => {
       data: mockOutOfStockProduct,
       isLoading: false,
       isError: false,
-    } as any);
+    } as UseQueryResult<Product, Error>);
 
     // Act: Render the component
     renderWithProviders(<ProductDetail />);
