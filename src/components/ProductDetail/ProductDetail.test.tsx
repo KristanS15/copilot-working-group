@@ -103,7 +103,7 @@ describe('ProductDetail Component - Behavior-Driven Tests', () => {
     const user = userEvent.setup();
 
     // Act: Render the component
-    const { container } = renderWithProviders(<ProductDetail />);
+    renderWithProviders(<ProductDetail />);
 
     // Find and click the "Add to Cart" button
     const addToCartButton = await screen.findByRole('button', { name: /add to cart/i });
